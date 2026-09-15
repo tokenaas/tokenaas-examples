@@ -59,7 +59,7 @@ Always prefer `GET /v1/models` for the models visible to your key.
 
 - Text, image, and video are billed by tokens, image units, or video seconds — see [Model Plaza](https://tokenaas.ai/model-plaza)
 - Check live availability on [Status](https://tokenaas.ai/status)
-- Privacy: [Privacy Policy](https://tokenaas.ai/privacy) · Terms: [Terms of Service](https://tokenaas.ai/terms)
+- Privacy: [Privacy Policy](https://tokenaas.ai/legal/privacy-policy) · Terms: [Terms of Service](https://tokenaas.ai/legal/terms)
 - Security reports: `admin@tokenaas.ai`
 - TokenAAS does not store your application prompts as training data for third parties through these examples; never commit API keys
 
