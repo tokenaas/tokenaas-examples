@@ -32,6 +32,12 @@ pip install -r requirements.txt
 python main.py
 ```
 
+## Guides
+
+| Guide | Level |
+| --- | --- |
+| [Use DeepSeek with the OpenAI Python SDK](./guides/use-deepseek-with-openai-python-sdk.md) | Beginner · 5 minutes |
+
 ## Examples
 
 | Path | What it does |
