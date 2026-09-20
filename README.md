@@ -1,18 +1,24 @@
 # TokenAAS Examples
 
-Connect to production-ready AI models through one API.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![OpenAI Compatible](https://img.shields.io/badge/OpenAI-compatible-412991)](https://tokenaas.ai/docs?utm_source=github&utm_medium=repository&utm_campaign=tokenaas_examples)
+[![Python](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white)](./openai-sdk/python-chat)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white)](./openai-sdk/node-chat)
 
-[Get API Key](https://tokenaas.ai/register?utm_source=github&utm_medium=repository&utm_campaign=tokenaas_examples) · [View Models](https://tokenaas.ai/model-plaza?utm_source=github&utm_medium=repository&utm_campaign=tokenaas_examples) · [Documentation](https://tokenaas.ai/docs?utm_source=github&utm_medium=repository&utm_campaign=tokenaas_examples) · [Service Status](https://tokenaas.ai/status?utm_source=github&utm_medium=repository&utm_campaign=tokenaas_examples)
+Copy-paste examples for calling production AI models through one **OpenAI-compatible** endpoint — text, image, and video. Keep your existing SDK; change `base_url` + API key.
+
+[Get API Key](https://tokenaas.ai/register?utm_source=github&utm_medium=repository&utm_campaign=tokenaas_examples) · [View Models](https://tokenaas.ai/model-plaza?utm_source=github&utm_medium=repository&utm_campaign=tokenaas_examples) · [Documentation](https://tokenaas.ai/docs?utm_source=github&utm_medium=repository&utm_campaign=tokenaas_examples) · [Service Status](https://tokenaas.ai/status?utm_source=github&utm_medium=repository&utm_campaign=tokenaas_examples) · [Discussions](https://github.com/tokenaas/tokenaas-examples/discussions)
+
+```text
+Base URL: https://tokenaas.ai/v1
+```
 
 ## Why TokenAAS
 
 - One OpenAI-compatible endpoint for text, image, and video models
 - Anthropic-compatible `/v1/messages` for supported groups
 - Change `base_url` + API key — keep your existing SDK code
-
-```text
-Base URL: https://tokenaas.ai/v1
-```
+- DeepSeek and other production models behind the same client
 
 ## 5-minute quickstart
 
@@ -32,11 +38,28 @@ pip install -r requirements.txt
 python main.py
 ```
 
+Minimal Python shape:
+
+```python
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="sk-...",
+    base_url="https://tokenaas.ai/v1",
+)
+print(client.chat.completions.create(
+    model="deepseek-v4-flash",
+    messages=[{"role": "user", "content": "Hello"}],
+).choices[0].message.content)
+```
+
 ## Guides
 
 | Guide | Level |
 | --- | --- |
 | [Use DeepSeek with the OpenAI Python SDK](./guides/use-deepseek-with-openai-python-sdk.md) | Beginner · 5 minutes |
+
+Publishing drafts for DEV.to / Medium live in [`publish/`](./publish).
 
 ## Examples
 
@@ -61,13 +84,18 @@ Default models used in examples (override with env vars):
 
 Always prefer `GET /v1/models` for the models visible to your key.
 
+## Community
+
+- Ask questions in [Discussions](https://github.com/tokenaas/tokenaas-examples/discussions)
+- Report docs/example bugs via [Issues](https://github.com/tokenaas/tokenaas-examples/issues)
+- Security reports: `admin@tokenaas.ai`
+
 ## Trust & safety
 
 - Text, image, and video are billed by tokens, image units, or video seconds — see [Model Plaza](https://tokenaas.ai/model-plaza)
 - Check live availability on [Status](https://tokenaas.ai/status)
 - Privacy: [Privacy Policy](https://tokenaas.ai/legal/privacy-policy) · Terms: [Terms of Service](https://tokenaas.ai/legal/terms)
-- Security reports: `admin@tokenaas.ai`
-- TokenAAS does not store your application prompts as training data for third parties through these examples; never commit API keys
+- Never commit API keys
 
 ## Common errors
 
