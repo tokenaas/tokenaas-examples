@@ -1,0 +1,81 @@
+name: Example bug
+description: Report an example that fails or behaves differently from its documentation.
+title: "[Example bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the examples. Never include an API key, password, session cookie, or unredacted personal data.
+  - type: input
+    id: example
+    attributes:
+      label: Example path
+      description: The repository path of the affected example.
+      placeholder: openai-sdk/python-chat
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model ID
+      description: Use the exact model ID sent in the request. Do not include your API key.
+      placeholder: deepseek-v4-flash
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and its impact.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Export TOKENAAS_API_KEY
+        2. Install dependencies
+        3. Run ...
+        4. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: input
+    id: request_id
+    attributes:
+      label: TokenAAS request ID
+      description: Optional. Include a request ID from the failed call when available.
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, runtime and SDK versions, plus any non-secret environment overrides.
+      placeholder: macOS 15, Python 3.12, openai 2.x
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized output
+      description: Remove credentials and personal information before pasting logs or screenshots.
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I confirmed the model is returned by `GET /v1/models` for my key.
+          required: true
+        - label: I searched existing issues and discussions.
+          required: true
+        - label: I removed API keys and personal information.
+          required: true
+        - label: This is not a security vulnerability or a private billing issue.
+          required: true

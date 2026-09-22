@@ -1,0 +1,55 @@
+name: New example request
+description: Propose a new SDK, framework, model capability, or integration example.
+title: "[Example request]: "
+labels:
+  - enhancement
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - OpenAI-compatible SDK
+        - Anthropic-compatible SDK
+        - cURL or raw HTTP
+        - Image generation
+        - Video generation
+        - Error handling and reliability
+        - Agent or application framework
+        - Deployment or environment setup
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: sdk
+    attributes:
+      label: SDK or framework
+      placeholder: openai-python, Vercel AI SDK, LangChain
+    validations:
+      required: true
+  - type: textarea
+    id: use_case
+    attributes:
+      label: User goal
+      description: What should a developer be able to accomplish after following the example?
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_flow
+    attributes:
+      label: Proposed flow
+      description: Outline the smallest useful, copy-paste-friendly example.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: Official references
+      description: Link to the primary SDK or framework documentation when possible.
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      options:
+        - label: I would be willing to open a pull request for this example.
+          required: false

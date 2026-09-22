@@ -1,0 +1,17 @@
+blank_issues_enabled: false
+contact_links:
+  - name: TokenAAS documentation
+    url: https://tokenaas.ai/docs
+    about: Start with the API quickstart and integration documentation.
+  - name: Models and pricing
+    url: https://tokenaas.ai/model-plaza
+    about: Check current model IDs, capabilities, availability, and pricing.
+  - name: Questions and integration help
+    url: https://github.com/tokenaas/tokenaas-examples/discussions
+    about: Ask usage questions and share integrations with the community.
+  - name: Account, billing, and business support
+    url: mailto:admin@tokenaas.ai
+    about: Contact TokenAAS support for private account or billing questions.
+  - name: Private security report
+    url: mailto:admin@tokenaas.ai?subject=TokenAAS%20Security%20Report
+    about: Never disclose a suspected vulnerability in a public issue.

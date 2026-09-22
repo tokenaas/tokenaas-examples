@@ -1,0 +1,43 @@
+name: Examples CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+
+      - name: Validate shell examples
+        run: find curl -type f -name '*.sh' -print0 | xargs -0 -n1 bash -n
+
+      - name: Validate Python examples
+        run: python -m compileall -q anthropic-sdk error-handling image-generation openai-sdk video-generation
+
+      - name: Validate Node.js examples
+        run: node --check openai-sdk/node-chat/main.mjs
+
+      - name: Detect likely committed API keys
+        shell: bash
+        run: |
+          if git grep -n -E 'sk-[A-Za-z0-9_-]{24,}' -- .; then
+            echo 'A value resembling a real API key was found. Replace it with a short placeholder.'
+            exit 1
+          fi

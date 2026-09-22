@@ -1,6 +1,7 @@
 # TokenAAS Examples
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Examples CI](https://github.com/tokenaas/tokenaas-examples/actions/workflows/examples-ci.yml/badge.svg)](https://github.com/tokenaas/tokenaas-examples/actions/workflows/examples-ci.yml)
 [![OpenAI Compatible](https://img.shields.io/badge/OpenAI-compatible-412991)](https://tokenaas.ai/docs?utm_source=github&utm_medium=repository&utm_campaign=tokenaas_examples)
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white)](./openai-sdk/python-chat)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white)](./openai-sdk/node-chat)
@@ -88,6 +89,7 @@ Always prefer `GET /v1/models` for the models visible to your key.
 
 - Ask questions in [Discussions](https://github.com/tokenaas/tokenaas-examples/discussions)
 - Report docs/example bugs via [Issues](https://github.com/tokenaas/tokenaas-examples/issues)
+- Propose or contribute an example using the [contribution guide](./.github/CONTRIBUTING.md)
 - Security reports: `admin@tokenaas.ai`
 
 ## Trust & safety
